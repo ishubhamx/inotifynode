@@ -2,7 +2,7 @@ var Inotify = require("inotify").Inotify;
 var inotify = new Inotify(); //persistent by default, new Inotify(false) //no persistent
 
 var data = {}; //used to correlate two events
-
+console.log(inotify);
 var callback = function (event) {
   var mask = event.mask;
   var type = mask & Inotify.IN_ISDIR ? "directory " : "file ";
@@ -47,11 +47,11 @@ var callback = function (event) {
 };
 var home_dir = {
   // Change this for a valid directory in your machine.
-  path: "/data/data/com.termux/files/home/nodejs",
-  watch_for: Inotify.IN_OPEN | Inotify.IN_CLOSE,
+  path: "/data/data/com.termux/files/home/nodejs/inotifynode",
+  watch_for: Inotify.IN_ALL_EVENTS,
   callback: callback,
 };
-
+console.log("home_watch");
 var home_watch_descriptor = inotify.addWatch(home_dir);
 console.log(home_watch_descriptor);
 var home2_dir = {
