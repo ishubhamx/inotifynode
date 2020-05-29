@@ -1,8 +1,9 @@
+console.log("start");
 var Inotify = require("inotify").Inotify;
 var inotify = new Inotify(); //persistent by default, new Inotify(false) //no persistent
 
 var data = {}; //used to correlate two events
-console.log(inotify);
+console.log("after");
 var callback = function (event) {
   var mask = event.mask;
   var type = mask & Inotify.IN_ISDIR ? "directory " : "file ";
