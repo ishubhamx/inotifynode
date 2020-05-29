@@ -1,5 +1,6 @@
 console.log("start");
 var Inotify = require("inotify").Inotify;
+console.log("after");
 var inotify = new Inotify(); //persistent by default, new Inotify(false) //no persistent
 
 var data = {}; //used to correlate two events
