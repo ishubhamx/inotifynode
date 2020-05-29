@@ -47,7 +47,7 @@ var callback = function (event) {
 };
 var home_dir = {
   // Change this for a valid directory in your machine.
-  path: "/home/camilo",
+  path: "/data/data/com.termux/files/home/nodejs",
   watch_for: Inotify.IN_OPEN | Inotify.IN_CLOSE,
   callback: callback,
 };
